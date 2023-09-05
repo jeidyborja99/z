@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 class Power extends StatelessWidget {
@@ -7,7 +9,7 @@ class Power extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Página de Reservas de Hotel'),
+        title: const Text('Página de Reservas de Hotel'),
         centerTitle: true,
         backgroundColor: Colors.blueGrey,
       ),
@@ -23,14 +25,14 @@ class Power extends StatelessWidget {
               height: 150,
               fit: BoxFit.cover,
             ),
-            SizedBox(height: 20),
-            Text(
+            const SizedBox(height: 20),
+            const Text(
               '¡Bienvenido a nuestro Sistema de Reservas!',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 10),
-            Text(
+            const SizedBox(height: 10),
+            const Text(
               'Explora nuestras opciones y revisa las reservas registradas',
               style: TextStyle(fontSize: 18),
               textAlign: TextAlign.center,

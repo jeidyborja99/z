@@ -12,7 +12,8 @@ class CustomBottomNavBarDot extends StatefulWidget {
   final double sizeIcon;
   final bool showLabel;
 
-  CustomBottomNavBarDot({
+  const CustomBottomNavBarDot({
+    super.key,
     this.defaultSelectedIndex = 0,
     required this.onChange,
     required this.iconList,
@@ -26,6 +27,7 @@ class CustomBottomNavBarDot extends StatefulWidget {
   });
 
   @override
+  // ignore: library_private_types_in_public_api
   _CustomBottomNavBarDotState createState() => _CustomBottomNavBarDotState();
 }
 
@@ -44,6 +46,7 @@ class _CustomBottomNavBarDotState extends State<CustomBottomNavBarDot> {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: no_leading_underscores_for_local_identifiers
     List<Widget> _navBarItemList = [];
 
     for (var i = 0; i < _iconList.length; i++) {
@@ -69,7 +72,7 @@ class _CustomBottomNavBarDotState extends State<CustomBottomNavBarDot> {
         _selectedIndex = index;
       },
       child: Container(
-        decoration: BoxDecoration(),
+        decoration: const BoxDecoration(),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -89,6 +92,7 @@ class _CustomBottomNavBarDotState extends State<CustomBottomNavBarDot> {
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 4),
                 child: Text(
+                  // ignore: unnecessary_string_interpolations
                   '$text',
                   style: TextStyle(
                       height: 0,
@@ -108,7 +112,7 @@ class _CustomBottomNavBarDotState extends State<CustomBottomNavBarDot> {
 
   Widget selectedDot() {
     return AnimatedContainer(
-      duration: Duration(milliseconds: 250),
+      duration: const Duration(milliseconds: 250),
       width: 4,
       height: 4,
       margin: const EdgeInsets.only(bottom: 4),
@@ -119,7 +123,7 @@ class _CustomBottomNavBarDotState extends State<CustomBottomNavBarDot> {
 
   Widget unselectedDot() {
     return AnimatedContainer(
-      duration: Duration(milliseconds: 250),
+      duration: const Duration(milliseconds: 250),
       width: 4,
       height: 4,
       margin: const EdgeInsets.only(bottom: 4),

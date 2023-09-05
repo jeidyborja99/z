@@ -12,7 +12,7 @@ class CustomBottomNavBarDash extends StatefulWidget {
   final double sizeIcon;
   final bool showLabel;
 
-  CustomBottomNavBarDash({
+  const CustomBottomNavBarDash({super.key, 
     this.defaultSelectedIndex = 0,
     required this.onChange,
     required this.iconList,
@@ -26,6 +26,7 @@ class CustomBottomNavBarDash extends StatefulWidget {
   });
 
   @override
+  // ignore: library_private_types_in_public_api
   _CustomBottomNavBarDashState createState() => _CustomBottomNavBarDashState();
 }
 
@@ -44,6 +45,7 @@ class _CustomBottomNavBarDashState extends State<CustomBottomNavBarDash> {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: no_leading_underscores_for_local_identifiers
     List<Widget> _navBarItemList = [];
 
     for (var i = 0; i < _iconList.length; i++) {
@@ -69,7 +71,7 @@ class _CustomBottomNavBarDashState extends State<CustomBottomNavBarDash> {
         _selectedIndex = index;
       },
       child: Container(
-        decoration: BoxDecoration(),
+        decoration: const BoxDecoration(),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -89,6 +91,7 @@ class _CustomBottomNavBarDashState extends State<CustomBottomNavBarDash> {
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 4),
                 child: Text(
+                  // ignore: unnecessary_string_interpolations
                   '$text',
                   style: TextStyle(
                       height: 0,
@@ -110,13 +113,13 @@ class _CustomBottomNavBarDashState extends State<CustomBottomNavBarDash> {
 
   Widget selectedIndicator() {
     return AnimatedContainer(
-      duration: Duration(milliseconds: 250),
+      duration: const Duration(milliseconds: 250),
       width: 40,
       height: 3,
       margin: const EdgeInsets.only(top: 4),
       decoration: BoxDecoration(
           color: widget.selectedColor,
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(3),
             topRight: Radius.circular(3),
           )),
@@ -125,7 +128,7 @@ class _CustomBottomNavBarDashState extends State<CustomBottomNavBarDash> {
 
   Widget unselectedIndicator() {
     return AnimatedContainer(
-      duration: Duration(milliseconds: 250),
+      duration: const Duration(milliseconds: 250),
       width: 40,
       height: 0,
       margin: const EdgeInsets.only(top: 7),

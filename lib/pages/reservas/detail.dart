@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:z/pages/reservas/listar.dart';
 
 class DetailReserva extends StatefulWidget {
   final List list;
   final int index;
-  DetailReserva({super.key, required this.index, required this.list});
+  const DetailReserva({super.key, required this.index, required this.list});
 
   @override
   State<DetailReserva> createState() => _DetailReservaState();
@@ -21,12 +20,15 @@ class _DetailReservaState extends State<DetailReserva> {
         'id': widget.list[widget.index]['id'].toString(),
       },
     ).then((response) {
+      // ignore: avoid_print
       print(response.body);
     }).catchError((error) {
+      // ignore: avoid_print
       print(error);
     });
   }
 
+  // ignore: non_constant_identifier_names
   void Confirmar() {
     AlertDialog alertDialog = AlertDialog(
       content: const Text(
@@ -87,47 +89,47 @@ class _DetailReservaState extends State<DetailReserva> {
             const SizedBox(height: 20),
             Text(
               "ID Reserva: ${widget.list[widget.index]['id']}",
-              style: TextStyle(fontSize: 18),
+              style: const TextStyle(fontSize: 18),
             ),
             const SizedBox(height: 20),
             Text(
               "ID Habitación: ${widget.list[widget.index]['idHabitacion']}",
-              style: TextStyle(fontSize: 18),
+              style: const TextStyle(fontSize: 18),
             ),
             const SizedBox(height: 10),
             Text(
               "Número de habitación: ${widget.list[widget.index]['numeroHabitacion']}",
-              style: TextStyle(fontSize: 18),
+              style: const TextStyle(fontSize: 18),
             ),
             const SizedBox(height: 20),
             Text(
               "ID Servicio: ${widget.list[widget.index]['idServicio']}",
-              style: TextStyle(fontSize: 18),
+              style: const TextStyle(fontSize: 18),
             ),
             const SizedBox(height: 10),
             Text(
               "Nombre de servicio: ${widget.list[widget.index]['nombre']}",
-              style: TextStyle(fontSize: 18),
+              style: const TextStyle(fontSize: 18),
             ),
             const SizedBox(height: 20),
             Text(
               "ID Cliente: ${widget.list[widget.index]['idCliente']}",
-              style: TextStyle(fontSize: 18),
+              style: const TextStyle(fontSize: 18),
             ),
             const SizedBox(height: 10),
             Text(
               "Nombre de cliente: ${widget.list[widget.index]['primerNombre']} ${widget.list[widget.index]['primerApellido']}",
-              style: TextStyle(fontSize: 18),
+              style: const TextStyle(fontSize: 18),
             ),
             const SizedBox(height: 20),
             Text(
               "Fecha Ingreso: ${widget.list[widget.index]['fecIngreso']}",
-              style: TextStyle(fontSize: 18),
+              style: const TextStyle(fontSize: 18),
             ),
             const SizedBox(height: 10),
             Text(
               "Fecha Salida: ${widget.list[widget.index]['fecSalida']}",
-              style: TextStyle(fontSize: 18),
+              style: const TextStyle(fontSize: 18),
             ),
             const SizedBox(height: 20),
             const Divider(),

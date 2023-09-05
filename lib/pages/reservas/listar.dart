@@ -24,7 +24,7 @@ class _ListarReservaState extends State<ListarReserva> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Lista de Reservas'),
+        title: const Text('Lista de Reservas'),
         centerTitle: true,
         backgroundColor: Colors.blueGrey,
       ),
@@ -32,8 +32,9 @@ class _ListarReservaState extends State<ListarReserva> {
         future: getData(),
         builder: (context, snapshot) {
           if (snapshot.hasError) {
+            // ignore: avoid_print
             print(snapshot.error);
-            return Center(
+            return const Center(
               child: Text(
                 'Error al cargar los datos',
                 style: TextStyle(fontSize: 18),
@@ -42,7 +43,7 @@ class _ListarReservaState extends State<ListarReserva> {
           }
           return snapshot.hasData
               ? ItemList(list: snapshot.data!)
-              : Center(
+              : const Center(
                   child: SpinKitDoubleBounce(
                     color: Colors.blue,
                     size: 50.0,
@@ -85,20 +86,20 @@ class ItemList extends StatelessWidget {
               child: ListTile(
                 title: Text(
                   'Habitación: $numeroHabitacion',
-                  style: TextStyle(fontSize: 18, color: Colors.blue),
+                  style: const TextStyle(fontSize: 18, color: Colors.blue),
                 ),
-                leading: Icon(
+                leading: const Icon(
                   Icons.calendar_today,
                   size: 30,
                   color: Colors.blue,
                 ),
                 subtitle: Text(
                   'Cliente: $nombreCliente',
-                  style: TextStyle(fontSize: 16, color: Colors.black),
+                  style: const TextStyle(fontSize: 16, color: Colors.black),
                 ),
                 trailing: Text(
                   '$nombreServicio',
-                  style: TextStyle(fontSize: 16, color: Colors.black),
+                  style: const TextStyle(fontSize: 16, color: Colors.black),
                 ),
               ),
             ),

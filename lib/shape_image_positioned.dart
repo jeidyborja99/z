@@ -12,7 +12,7 @@ class ShapeImagePositioned extends StatelessWidget {
       child: Container(
         width: MediaQuery.of(context).size.width,
         height: 450,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage(
                 'assets/images/shape.png'), // Cambia la ruta de la imagen según tu proyecto

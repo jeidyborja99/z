@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_print
+// ignore_for_file: avoid_print, use_build_context_synchronously
 
 import 'dart:convert';
 import 'package:flutter/material.dart';
@@ -22,8 +22,10 @@ class UserData {
   UserData._internal();
 
   String? name;
+  // ignore: non_constant_identifier_names
   String? second_name;
   String? surname;
+  // ignore: non_constant_identifier_names
   String? second_surname;
   String? email;
   String? birthday;

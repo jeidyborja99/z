@@ -164,7 +164,7 @@ class _SplashScreenState extends State<SplashScreen>
                                   child: Container(
                                     height: _buttonWidth - 20,
                                     width: _buttonWidth - 20,
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                       color: Colors
                                           .blue, // Cambia el color a tu elección
                                       shape: BoxShape.circle,
