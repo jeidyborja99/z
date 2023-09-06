@@ -13,7 +13,7 @@ class DetailReserva extends StatefulWidget {
 class _DetailReservaState extends State<DetailReserva> {
   void deleteData() {
     var url = Uri.parse(
-        "http://192.168.1.54/bd_funhotel_flutter/deleteDataReserva.php");
+        "http://192.168.1.11/bd_funhotel_flutter/deleteDataReserva.php");
     http.post(
       url,
       body: {

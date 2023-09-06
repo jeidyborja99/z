@@ -15,7 +15,7 @@ class ListarReserva extends StatefulWidget {
 class _ListarReservaState extends State<ListarReserva> {
   Future<List> getData() async {
     final response = await http.get(
-      Uri.parse('http://192.168.1.54/bd_funhotel_flutter/getdataReservas.php'),
+      Uri.parse('http://192.168.1.11/bd_funhotel_flutter/getdataReservas.php'),
     );
     return json.decode(response.body);
   }

@@ -1,4 +1,4 @@
-#Tue Sep 05 22:29:48 COT 2023
-base.0=C\:\\Users\\Mateo\\Documents\\zzz\\z\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-path.0=classes.dex
+#Wed Sep 06 13:48:03 COT 2023
+base.0=C\:\\Users\\Jeidy\\Desktop\\z\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
+path.0=classes.dex
