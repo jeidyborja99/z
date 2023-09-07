@@ -11,7 +11,7 @@ class Power extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Página de Reservas de Hotel'),
         centerTitle: true,
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Color.fromARGB(255, 101, 76, 216),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -21,13 +21,13 @@ class Power extends StatelessWidget {
           children: [
             Image.asset(
               'assets/images/logo.png', // Ruta de tu logo de hotel
-              width: 150,
-              height: 150,
+              width: 200,
+              height: 200,
               fit: BoxFit.cover,
             ),
             const SizedBox(height: 20),
             const Text(
-              '¡Bienvenido a nuestro Sistema de Reservas!',
+              '¡Bienvenidos a nuestro Sistema de Reservas!',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),

@@ -26,7 +26,7 @@ class _ListarReservaState extends State<ListarReserva> {
       appBar: AppBar(
         title: const Text('Lista de Reservas'),
         centerTitle: true,
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Color.fromARGB(255, 101, 76, 216),
       ),
       body: FutureBuilder<List>(
         future: getData(),
@@ -45,7 +45,7 @@ class _ListarReservaState extends State<ListarReserva> {
               ? ItemList(list: snapshot.data!)
               : const Center(
                   child: SpinKitDoubleBounce(
-                    color: Colors.blue,
+                    color: Color.fromARGB(255, 33, 173, 243),
                     size: 50.0,
                   ),
                 );
@@ -80,18 +80,19 @@ class ItemList extends StatelessWidget {
               ),
             ),
             child: Card(
-              elevation: 3,
+              elevation: 22,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15)),
               child: ListTile(
                 title: Text(
                   'Habitación: $numeroHabitacion',
-                  style: const TextStyle(fontSize: 18, color: Colors.blue),
+                  style: const TextStyle(
+                      fontSize: 18, color: Color.fromARGB(255, 8, 8, 8)),
                 ),
                 leading: const Icon(
                   Icons.calendar_today,
                   size: 30,
-                  color: Colors.blue,
+                  color: Color.fromARGB(255, 49, 18, 205),
                 ),
                 subtitle: Text(
                   'Cliente: $nombreCliente',

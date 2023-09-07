@@ -36,10 +36,10 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
 
-
   Future<void> _login() async {
     final response = await http.post(
-      Uri.parse('http://192.168.1.11/bd_funhotel_flutter/login.php'), // Hola mundirijillo
+      Uri.parse(
+          'http://192.168.1.11/bd_funhotel_flutter/login.php'), // Hola mundirijillo
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
@@ -80,23 +80,41 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:
-          Colors.blueGrey, // Cambia el color de fondo a tu elección
+      backgroundColor: Color.fromARGB(231, 244, 239, 239),
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              'Iniciar sesión',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 35,
-                  fontWeight: FontWeight.bold),
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                Image.asset(
+                  'assets/images/Mediano.png', // Reemplaza con la ruta de tu imagen
+                  width:
+                      200, // Ajusta el ancho de la imagen según tus necesidades
+                  height:
+                      200, // Ajusta la altura de la imagen según tus necesidades
+                ),
+                Positioned(
+                  top: 150, // Ajusta la posición vertical de la imagen
+                  child: Container(
+                    color: Colors.transparent,
+                    child: const Text(
+                      'FunHotel',
+                      style: TextStyle(
+                        color: Color.fromARGB(221, 25, 25, 25),
+                        fontSize: 45,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
             const SizedBox(
-              height: 20,
+              height: 15,
             ),
             Container(
               decoration: BoxDecoration(
@@ -104,27 +122,29 @@ class _LoginScreenState extends State<LoginScreen> {
                     .white, // Cambia el color del campo de texto a tu elección
                 borderRadius: BorderRadius.circular(10),
               ),
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.all(11),
               child: Column(
                 children: [
                   TextFormField(
                     controller: _nameController,
                     // initialValue: 'Mateo',
                     decoration: InputDecoration(
-                      prefixIcon:
-                          const Icon(Icons.mail), // Cambia el icono a tu elección
+                      prefixIcon: const Icon(
+                          Icons.mail), // Cambia el icono a tu elección
                       hintText: 'Nombre',
-                      hintStyle: TextStyle(color: Colors.grey.withOpacity(.7)),
+                      hintStyle: TextStyle(
+                          color: const Color.fromARGB(255, 19, 19, 19)
+                              .withOpacity(.7)),
                     ),
                     keyboardType: TextInputType.emailAddress,
                   ),
                   Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 20),
+                    margin: const EdgeInsets.symmetric(horizontal: 4),
                     decoration: const BoxDecoration(
                       border: Border(
                         top: BorderSide(
-                            color: Colors
-                                .grey), // Cambia el color de la línea superior a tu elección
+                            color: Color.fromARGB(255, 53, 53,
+                                54)), // Cambia el color de la línea superior a tu elección
                       ),
                     ),
                   ),
@@ -132,19 +152,27 @@ class _LoginScreenState extends State<LoginScreen> {
                     controller: _emailController,
                     // initialValue: 'admin@mateo.com',
                     decoration: InputDecoration(
-                      prefixIcon:
-                          const Icon(Icons.lock), // Cambia el icono a tu elección
+                      prefixIcon: const Icon(
+                          Icons.lock), // Cambia el icono a tu elección
                       hintText: 'Email',
-                      hintStyle: TextStyle(color: Colors.grey.withOpacity(.7)),
+                      hintStyle: TextStyle(
+                          color:
+                              Color.fromARGB(255, 17, 16, 16).withOpacity(.7)),
                     ),
                     keyboardType: TextInputType.emailAddress,
                     // obscureText: true, // Activa el modo de contraseña oculta
                   ),
+                  Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 4),
+                      decoration: const BoxDecoration(
+                          border: Border(
+                              top: BorderSide(
+                                  color: Color.fromARGB(255, 53, 53, 54)))))
                 ],
               ),
             ),
             const SizedBox(
-              height: 40,
+              height: 15,
             ),
             SizedBox(
               width: MediaQuery.of(context).size.width,
@@ -153,16 +181,17 @@ class _LoginScreenState extends State<LoginScreen> {
                   _login();
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue, // Cambia el color del botón a tu elección
+                  backgroundColor: const Color.fromARGB(255, 128, 33,
+                      243), // Cambia el color del botón a tu elección
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(
-                        8), // Cambia el radio de borde a tu elección
+                        9), // Cambia el radio de borde a tu elección
                   ),
                 ),
                 child: const FittedBox(
                   child: Text(
                     'Entrar',
-                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
+                    style: TextStyle(fontWeight: FontWeight.w400, fontSize: 20),
                   ),
                 ),
               ),

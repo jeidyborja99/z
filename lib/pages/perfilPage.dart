@@ -1,11 +1,9 @@
-// ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:z/login_screen.dart';
 
 class Perfil extends StatelessWidget {
-  const Perfil({super.key});
+  const Perfil({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +13,7 @@ class Perfil extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Mi Perfil'),
         centerTitle: true,
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: const Color.fromARGB(255, 101, 76, 216),
       ),
       body: Container(
         padding: const EdgeInsets.all(20.0),
@@ -25,7 +23,7 @@ class Perfil extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             UserInfoCard(userData: userData),
-            const SizedBox(height: 30),
+            const SizedBox(height: 50),
             AnimatedTextKit(
               animatedTexts: [
                 TypewriterAnimatedText(
@@ -35,19 +33,24 @@ class Perfil extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 40),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushReplacementNamed(context, '/loginPage');
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.red,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-              ),
-              child: const Text(
-                'Cerrar sesión',
-                style: TextStyle(fontSize: 18),
+            const SizedBox(height: 45),
+            Center(
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/loginPage');
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: Color.fromARGB(255, 255, 28, 12),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: 19,
+                      vertical: 12), // Ajusta el tamaño del botón
+                ),
+                child: Text(
+                  'Cerrar sesión',
+                  style: TextStyle(
+                    fontSize: 19, // Ajusta el tamaño de la fuente
+                  ),
+                ),
               ),
             ),
           ],
@@ -65,7 +68,7 @@ class UserInfoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 8,
+      elevation: 3,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       child: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -74,7 +77,7 @@ class UserInfoCard extends StatelessWidget {
           children: [
             Text(
               'Nombre: ${userData.name}',
-              style: const TextStyle(fontSize: 20),
+              style: const TextStyle(fontSize: 22),
             ),
             const SizedBox(height: 10),
             Text(

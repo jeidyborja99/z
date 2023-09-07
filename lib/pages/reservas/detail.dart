@@ -71,103 +71,117 @@ class _DetailReservaState extends State<DetailReserva> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Detalle de Reserva"),
-        backgroundColor: Colors.blueGrey,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              "Detalle de Reserva",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        appBar: AppBar(
+          title: const Text("Detalle de Reserva"),
+          backgroundColor: Color.fromARGB(255, 101, 76, 216),
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Container(
+            padding: const EdgeInsets.all(20.0), // Relleno dentro del cuadro
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: Colors.grey, // Color del borde del cuadro
+                width: 2.0, // Grosor del borde del cuadro
+              ),
+              borderRadius: BorderRadius.circular(10.0), // Bordes redondeados
             ),
-            const SizedBox(height: 20),
-            const Divider(),
-            const SizedBox(height: 20),
-            Text(
-              "ID Reserva: ${widget.list[widget.index]['id']}",
-              style: const TextStyle(fontSize: 18),
-            ),
-            const SizedBox(height: 20),
-            Text(
-              "ID Habitación: ${widget.list[widget.index]['idHabitacion']}",
-              style: const TextStyle(fontSize: 18),
-            ),
-            const SizedBox(height: 10),
-            Text(
-              "Número de habitación: ${widget.list[widget.index]['numeroHabitacion']}",
-              style: const TextStyle(fontSize: 18),
-            ),
-            const SizedBox(height: 20),
-            Text(
-              "ID Servicio: ${widget.list[widget.index]['idServicio']}",
-              style: const TextStyle(fontSize: 18),
-            ),
-            const SizedBox(height: 10),
-            Text(
-              "Nombre de servicio: ${widget.list[widget.index]['nombre']}",
-              style: const TextStyle(fontSize: 18),
-            ),
-            const SizedBox(height: 20),
-            Text(
-              "ID Cliente: ${widget.list[widget.index]['idCliente']}",
-              style: const TextStyle(fontSize: 18),
-            ),
-            const SizedBox(height: 10),
-            Text(
-              "Nombre de cliente: ${widget.list[widget.index]['primerNombre']} ${widget.list[widget.index]['primerApellido']}",
-              style: const TextStyle(fontSize: 18),
-            ),
-            const SizedBox(height: 20),
-            Text(
-              "Fecha Ingreso: ${widget.list[widget.index]['fecIngreso']}",
-              style: const TextStyle(fontSize: 18),
-            ),
-            const SizedBox(height: 10),
-            Text(
-              "Fecha Salida: ${widget.list[widget.index]['fecSalida']}",
-              style: const TextStyle(fontSize: 18),
-            ),
-            const SizedBox(height: 20),
-            const Divider(),
-            const SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // ElevatedButton(
-                //   onPressed: () {
-                //     Navigator.of(context).pushReplacement(
-                //       MaterialPageRoute(
-                //         builder: (BuildContext context) => const ListarReserva(),
-                //       ),
-                //     );
-                //   },
-                //   style: ElevatedButton.styleFrom(
-                //     backgroundColor: Colors.blueGrey,
-                //     padding:
-                //         const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-                //   ),
-                //   child: const Text("Regresar"),
-                // ),
-                ElevatedButton(
-                  onPressed: () {
-                    Confirmar();
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red,
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-                  ),
-                  child: const Text("Eliminar"),
+                const Text(
+                  "Detalles de la Reserva",
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 20),
+                const Divider(),
+                const SizedBox(height: 20),
+                Text(
+                  "ID Reserva: ${widget.list[widget.index]['id']}",
+                  style: const TextStyle(fontSize: 18),
+                ),
+                const SizedBox(height: 20),
+                Text(
+                  "ID Habitación: ${widget.list[widget.index]['idHabitacion']}",
+                  style: const TextStyle(fontSize: 18),
+                ),
+                const SizedBox(height: 10),
+                Text(
+                  "Número de habitación: ${widget.list[widget.index]['numeroHabitacion']}",
+                  style: const TextStyle(fontSize: 18),
+                ),
+                const SizedBox(height: 20),
+                Text(
+                  "ID Servicio: ${widget.list[widget.index]['idServicio']}",
+                  style: const TextStyle(fontSize: 18),
+                ),
+                const SizedBox(height: 10),
+                Text(
+                  "Nombre de servicio: ${widget.list[widget.index]['nombre']}",
+                  style: const TextStyle(fontSize: 18),
+                ),
+                const SizedBox(height: 20),
+                Text(
+                  "ID Cliente: ${widget.list[widget.index]['idCliente']}",
+                  style: const TextStyle(fontSize: 18),
+                ),
+                const SizedBox(height: 10),
+                Text(
+                  "Nombre de cliente: ${widget.list[widget.index]['primerNombre']} ${widget.list[widget.index]['primerApellido']}",
+                  style: const TextStyle(fontSize: 18),
+                ),
+                const SizedBox(height: 20),
+                Text(
+                  "Fecha Ingreso: ${widget.list[widget.index]['fecIngreso']}",
+                  style: const TextStyle(fontSize: 18),
+                ),
+                const SizedBox(height: 10),
+                Text(
+                  "Fecha Salida: ${widget.list[widget.index]['fecSalida']}",
+                  style: const TextStyle(fontSize: 18),
+                ),
+                const SizedBox(height: 20),
+                const Divider(),
+                const SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    // ElevatedButton(
+                    //   onPressed: () {
+                    //     Navigator.of(context).pushReplacement(
+                    //       MaterialPageRoute(
+                    //         builder: (BuildContext context) => const ListarReserva(),
+                    //       ),
+                    //     );
+                    //   },
+                    //   style: ElevatedButton.styleFrom(
+                    //     backgroundColor: Colors.blueGrey,
+                    //     padding:
+                    //         const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                    //   ),
+                    //   child: const Text("Regresar"),
+                    // ),
+                    ElevatedButton(
+                        onPressed: () {
+                          Confirmar();
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor:
+                              const Color.fromARGB(255, 255, 28, 12),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 35, vertical: 16),
+                        ),
+                        child: Text(
+                          "Eliminar",
+                          style: TextStyle(
+                            fontSize: 19, // Ajusta el tamaño de la fuente aquí
+                          ),
+                        ))
+                  ],
                 ),
               ],
             ),
-          ],
-        ),
-      ),
-    );
+          ),
+        ));
   }
 }

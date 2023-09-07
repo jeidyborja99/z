@@ -97,39 +97,49 @@ class _SplashScreenState extends State<SplashScreen>
     _initPositioned(screenWidth);
 
     return Scaffold(
-      backgroundColor:
-          Colors.blueGrey, // Cambia el color de fondo a tu elección
+      backgroundColor: Color.fromARGB(
+          239, 240, 237, 237), // Cambia el color de fondo a tu elección
       body: Stack(
         children: [
           const ShapeImagePositioned(),
           const ShapeImagePositioned(top: -100),
-          const ShapeImagePositioned(top: -150),
-          const ShapeImagePositioned(top: -200),
+          const ShapeImagePositioned(top: -250),
+          const ShapeImagePositioned(top: -100),
+          Positioned(
+            top: -170, // Ajusta la posición vertical según tus necesidades
+            right: -195,
+            child: Transform.scale(
+              scale: 0.2,
+              child: Image.asset(
+                  'assets/images/Blanco.png'), // Reemplaza con tu imagen
+            ),
+          ),
           Container(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(5),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 const Text(
-                  'Bienvenido',
+                  '¡Bienvenidos a FunHotel!',
                   style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 35,
+                      color: Color.fromARGB(255, 96, 0, 214),
+                      fontSize: 49,
                       fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
                 Text(
-                  'Una nueva manera de hacer tus reservas',
+                  'Esta es nueva manera de hacer tus reservas',
                   style: TextStyle(
-                      color: Colors.white.withOpacity(.8),
-                      fontSize: 20,
-                      height: 1.5),
+                      color:
+                          const Color.fromARGB(255, 41, 41, 41).withOpacity(.8),
+                      fontSize: 21,
+                      height: 1.4),
                 ),
                 const SizedBox(
-                  height: 100,
+                  height: 50,
                 ),
                 AnimatedBuilder(
                   animation: _buttonScaleController,
@@ -144,11 +154,11 @@ class _SplashScreenState extends State<SplashScreen>
                           AnimatedBuilder(
                             animation: _buttonWidthController,
                             builder: (_, child) => Container(
-                              height: _buttonWidth,
-                              width: _buttonWidthAnimation.value,
+                              height: _buttonWidth - 4,
+                              width: _buttonWidthAnimation.value - 4,
                               decoration: BoxDecoration(
                                 color: Colors.blue.withOpacity(.7),
-                                borderRadius: BorderRadius.circular(50),
+                                borderRadius: BorderRadius.circular(200),
                               ),
                             ),
                           ),
@@ -165,8 +175,8 @@ class _SplashScreenState extends State<SplashScreen>
                                     height: _buttonWidth - 20,
                                     width: _buttonWidth - 20,
                                     decoration: const BoxDecoration(
-                                      color: Colors
-                                          .blue, // Cambia el color a tu elección
+                                      color: Color.fromARGB(41, 0, 73,
+                                          147), // Cambia el color a tu elección
                                       shape: BoxShape.circle,
                                     ),
                                     alignment: Alignment.center,
@@ -174,7 +184,7 @@ class _SplashScreenState extends State<SplashScreen>
                                         ? const Icon(
                                             Icons.chevron_right,
                                             color: Colors.white,
-                                            size: 35,
+                                            size: 40,
                                           )
                                         : null,
                                   ),

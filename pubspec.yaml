@@ -29,4 +29,7 @@ flutter:
 
   assets:
     - assets/images/logo.png
+    - assets/images/Mediano.png
+    - assets/images/Blanco.png
+    - assets/images/Funhotel.png
     - assets/screenshots/
